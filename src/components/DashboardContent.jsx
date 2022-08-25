@@ -7,7 +7,7 @@ const DashboardContent = () => {
     return (
         <div className="w-full flex flex-wrap gap-4">
             {snapshots?.map((data, id) => {
-                return <PendinginCard data={data.val()} id={id}  />
+                return <PendinginCard data={data.val()} id={data?.key}  />
             })}
         </div>
     )
