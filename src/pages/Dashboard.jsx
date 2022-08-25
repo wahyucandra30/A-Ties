@@ -5,6 +5,7 @@ import DashboardTable from "../components/DashboardTable";
 import { logOut } from "../store/actions/userDataAction";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase/firebase-config";
+import DashboardContent from "../components/DashboardContent";
 
 function Dashboard() {
     const navigate = useNavigate();
@@ -28,8 +29,8 @@ function Dashboard() {
     }, [])
     return (
         <main className="flex items-center justify-center">
-            <div className="flex flex-col items-center max-w-[1500px] w-full py-8 px-32">
-                <nav className="flex items-center justify-between w-full">
+            <div className="flex flex-col items-center max-w-[1500px] w-full py-8 lg:px-32">
+                <nav className="flex items-center justify-between w-full px-8 lg:px-0">
                     <img src="logo.png" alt="" className="w-36" />
                     <button onClick={() => logOut(dispatch, navigate)}
                         className="px-12 py-2 text-sm text-white font-bold bg-zinc-900 rounded-full hover:bg-zinc-700">
@@ -41,7 +42,8 @@ function Dashboard() {
                     {/* {getPendinginList(() => {
                         return <DashboardTable />
                     })} */}
-                    <DashboardTable dataList={pendinginList} />
+                    {/* <DashboardTable dataList={pendinginList} /> */}
+                    <DashboardContent />
                 </div>
             </div>
         </main>
