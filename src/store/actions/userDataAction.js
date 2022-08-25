@@ -11,16 +11,17 @@ import axios from "axios"
 //         .catch(err => console.log(err))
 //         .then(navigate("/"))
 // }
-export const loginWithEmailandPassword = async (dispatch, email, password, navigate) => {
-    return signInWithEmailAndPassword(auth, email, password)
-        .then((res) => {
-            dispatch({ type: "SET_USER_DATA", payload: res.user });
-        })
-        .catch(err => {
-            console.log(err.code);
-            console.log(err.message);
-        })
-        .then(navigate("/"))
+export const loginWithEmailandPassword = async (email, password) => {
+    return setPersistence(auth, browserLocalPersistence)
+        .then(async () => {
+            try {
+                await signInWithEmailAndPassword(auth, email, password)
+            }
+            catch (err) {
+                console.log(err.code);
+                console.log(err.message);
+            }
+})
 }
 export const logOut = async (dispatch, navigate) => {
     return auth.signOut()

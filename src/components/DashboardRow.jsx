@@ -1,28 +1,28 @@
-const DashboardRow = ({gedung, ruang, hari, pelapor, status, tindak, penyelesaian}) => {
+const DashboardRow = ({data}) => {
     return (
         <>
-
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+            <tr 
+            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    {gedung}
+                    {data?.gedung}
                 </th>
                 <td class="py-4 px-6">
-                    {ruang}
+                    {data?.ruang}
                 </td>
                 <td class="py-4 px-6">
-                    {hari}
+                    {data?.hari ? data.hari : "-"}
                 </td>
                 <td class="py-4 px-6">
-                    {pelapor}
+                    {data?.pelapor ? data.pelapor : "-"}
                 </td>
                 <td class="py-4 px-6">
-                    {status}
+                    {data?.status ? data.status : "-"}
                 </td>
                 <td class="py-4 px-6">
-                    {tindak}
+                    {data?.tindak ? data.tindak : "-"}
                 </td>
                 <td class="py-4 px-6">
-                    {penyelesaian}
+                    {data?.penyelesaian ? data.penyelesaian : "-"}
                 </td>
             </tr>
         </>

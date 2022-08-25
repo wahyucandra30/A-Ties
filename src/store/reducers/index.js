@@ -1,7 +1,6 @@
 import { combineReducers } from "redux";
-import pendinginDataReducer from "./pendinginDataReducer";
-import loginReducer from "./loginReducer";
+import userDataReducer from "./userDataReducer";
 
-const rootReducer = combineReducers({ pendinginDataReducer, loginReducer });
+const rootReducer = combineReducers({ userDataReducer });
 
 export default rootReducer;
