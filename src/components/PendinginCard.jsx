@@ -57,7 +57,7 @@ const PendinginCard = ({ data, id }) => {
       <div className="border border-gray-300 drop-shadow-sm min-w-[128px] lg:w-56 w-full p-4 rounded-md relative flex flex-col gap-1 justify-between">
         <div>
           <div className="flex flex-col">
-            <h1 className="text-base font-bold leading-none">Pendingin {data?.id}</h1>
+            <h1 className="text-base font-bold leading-none">Pendingin {data?.id?.slice(data?.id?.length - 3, data?.id?.length)}</h1>
             <h2 className="text-[12px] text-gray-400">
               Gedung {data?.gedung}, Ruang {data?.ruang}
             </h2>
