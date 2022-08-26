@@ -17,7 +17,7 @@ export const loginWithEmailandPassword = async (email, password) => {
       await signInWithEmailAndPassword(auth, email, password);
     } catch (err) {
       console.log("gagal");
-      alert("gagaaa");
+      alert("Data login salah, silakan periksa kembali!");
       console.log(err.code);
       console.log(err.message);
     }
